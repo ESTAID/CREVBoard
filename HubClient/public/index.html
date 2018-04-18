@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREV | Creative Developers</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.7/styles/monokai_sublime.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/article-old-ie.css">
+        <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/email.css">
+  <!--<![endif]-->
+</head>
+
+<body>
+  <div id="layout" class="content pure-g">
+    <div id="nav" class="pure-u">
+      <!-- <a href="#" class="nav-menu-button">Menu</a> -->
+      <div class="nav-hamburger-menu"></div>
+      <div class="nav-inner">
+        <div class="pure-menu">
+          <ul class="pure-menu-list">
+
+            <li class="pure-menu-item">
+              <p class="logo">
+                CREVHUB
+              </p>
+            </li>
+
+            <li class="pure-menu-item">
+              <a href="#list1" class="pure-menu-link">Javascript</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#list2" class="pure-menu-link">Algorithm</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#list3" class="pure-menu-link">Data Structure</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#list4" class="pure-menu-link">HTML/CSS</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#list5" class="pure-menu-link">Framework</a>
+            </li>
+            <li class="pure-menu-heading">Labels</li>
+            <li class="pure-menu-item">
+              <a href="#" class="pure-menu-link">
+                <span class="article-label-personal"></span>Personal</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#" class="pure-menu-link">
+                <span class="article-label-work"></span>Work</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#" class="pure-menu-link">
+                <span class="article-label-travel"></span>Travel</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nav-mobile" style="display:none;">
+        <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+          <ul class="pure-menu-list">
+            <li class="pure-menu-item">
+              <a href="#list1" class="pure-menu-link">Javascript</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#list2" class="pure-menu-link">Algorithm</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#list3" class="pure-menu-link">Data Structure</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#list4" class="pure-menu-link">HTML/CSS</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#list5" class="pure-menu-link">Framework</a>
+            </li>
+          </ul>
+        </div>
+        <div class="pure-menu pure-menu-horizontal pure-menu-scrollable" style="text-align: center;">
+          <ul class="pure-menu-list">
+            <li class="pure-menu-item">
+              <a href="#" class="pure-menu-link">
+                <span class="article-label-personal"></span>Personal</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#" class="pure-menu-link">
+                <span class="article-label-work"></span>Work</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="#" class="pure-menu-link">
+                <span class="article-label-travel"></span>Travel</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-inner-button">
+        <button id="write-btn" class="primary-button pure-button nav-button">POST</button>
+        <button id="login-btn" class="primary-button pure-button nav-button">SIGN IN</button>
+      </div>
+
+      <script>
+        var hamburgerElement = document.querySelector('.nav-hamburger-menu');
+        var navMobileElement = document.querySelector('.nav-mobile');
+        var navButtonElement = document.querySelector('.nav-inner-button');
+        hamburgerElement.addEventListener('click', function() {
+          if (navMobileElement.style.display === 'none' || navButtonElement.style.display === 'none') {
+            navMobileElement.style.display = 'block';
+            navButtonElement.style.display = 'block';
+          } else {
+            navMobileElement.style.display = 'none';
+            navButtonElement.style.display = 'none';
+          }
+        });
+      </script>
+    </div>
+    <div id="list" class="pure-u-1">
+    </div>
+    <div id="main" class="pure-u-1">
+    </div>
+    <div id="write" class="pure-1" style="width: 1200px;">
+    </div>
+    <div id="login" class="pure-g">
+      <input type="checkbox" id="modal-login" class="modal-state" />
+      <div class="modal">
+        <label class="modal-bg" for="modal-login"></label>
+        <div class="modal-inner">
+          <label class="modal-close" for="modal-login"></label>
+          <form class="pure-form sign-in-form">
+            <fieldset class="pure-group">
+              <legend style="text-align:center;">Sign in</legend>
+
+              <label for="signinEmail">ID</label>
+              <input type="text" id="signinEmail" class="pure-input-1-1 form-inner-w-100" placeholder="Email">
+              <label for="signinPassword">Password</label>
+              <input type="password" id="signinPassword" class="pure-input-1-1 form-inner-w-100" placeholder="Password">
+              <button id="sign-in" class="pure-button pure-input-1-1 pure-button-primary form-inner-w-100">Sign in</button>
+              <button id="sign-inInnerSignup" class="pure-button pure-input-1-1 pure-button-primary form-inner-w-100">Sign up</button>
+            </fieldset>
+          </form>
+
+          <form class="pure-form sign-up-form">
+            <legend style="text-align:center;">sign up</legend>
+            <fieldset class="pure-group">
+              <label for="formname">Username</label>
+              <input type="text" id="form-name" class="pure-input-1-1 form-inner-w-100" placeholder="Username">
+              <label>Email</label>
+              <input type="email" id="form-email" class="pure-input-1-1 form-inner-w-100" placeholder="Email">
+              <label>Password</label>
+              <input type="password" id="form-password" class="pure-input-1-1 form-inner-w-100" placeholder="Password">
+              <input type="password" id="form-repassword" class="pure-input-1-1 form-inner-w-100" placeholder="Repassword">
+              <button id="sign-upInnerSign-up" class="pure-button pure-input-1-1 pure-button-primary form-inner-w-100">Sign up</button>
+
+              <button id="signupCancelButton" class="pure-button pure-input-1-1 pure-button-primary form-inner-w-100">Cancel</button>
+            </fieldset>
+          </form>
+        </div>
+        <script>
+          var modalInnerElement = document.querySelector('.modal-inner');
+          var formSigninButton = document.querySelector('#sign-in');
+          var formSignupButton = document.querySelector('#sign-inInnerSignup');
+          var formSignupInnerSignupButton = document.querySelector('#sign-upInnerSign-up');
+          var formSignupElement = document.querySelector('.sign-up-form');
+          var formSigninElement = document.querySelector('.sign-in-form');
+          document.querySelector('#login-btn').addEventListener('click', function(ev) {
+            ev.preventDefault();
+            document.querySelector('#modal-login').checked = true;
+            if (formSigninElement.style.display = 'none') {
+              formSignupElement.style.display = 'none';
+              formSigninElement.style.display = 'block';
+              modalInnerElement.style.height = '50%';
+            }
+          });
+          formSignupButton.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            if (formSignupElement.style.display = 'none') {
+              formSigninElement.style.display = 'none';
+              formSignupElement.style.display = 'block';
+              modalInnerElement.style.height = '500px';
+            }
+          });
+          var formCancelButton = document.querySelector('#signupCancelButton');
+          formCancelButton.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            formSignupElement.style.display = 'none';
+            formSigninElement.style.display = 'block';
+            modalInnerElement.style.height = '50%';
+          });
+          formSignupInnerSignupButton.addEventListener('click', function(ev) {
+            ev.preventDefault();
+          });
+          formSigninButton.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            var form_data = {
+              user_id: $("#signinEmail").val(),
+              user_pw: $("#signinPassword").val(),
+            };
+            $.ajax({
+                method: "POST",
+                url: "http://13.125.111.35:58950/login",
+                data: form_data,
+                xhrFields: {
+                  withCredentials: true
+                },
+                crossDomain: true
+              })
+              .done(function(data) {
+                if (data.result === 'success') {
+                  alert('성공');
+                  document.querySelector('#modal-login').checked = false;
+                } else {
+                  alert('실패');
+                }
+              });
+          });
+        </script>
+      </div>
+</body>
+
+</html>
