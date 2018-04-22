@@ -9,13 +9,14 @@
 이 웹 어플리케이션은 <b>마크다운</b> 전용 어플리케이션입니다.
 
 마크다운 사용이 처음이신분들은 아래의 링크를 참고해주시길 바랍니다.
+
 [링크](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 
 ## Requirements
 - showdown.js 를 이용하였습니다.
 
   [showdown.js](https://github.com/showdownjs/showdown)
-- CSS는 pure.css를 이용하였습니다.
+- CSS는 pure.css 를 이용하였습니다.
 
   [pure.css](https://purecss.io/)
 - 반응형 웹 어플리케이션입니다.
