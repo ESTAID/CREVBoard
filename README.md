@@ -13,10 +13,11 @@
 
 ## Requirements
 - showdown.js 를 이용하였습니다.
-[showdown.js](https://github.com/showdownjs/showdown)
-- Vanilla Javascript
+
+  [showdown.js](https://github.com/showdownjs/showdown)
 - CSS는 pure.css를 이용하였습니다.
-[pure.css](https://purecss.io/)
+
+  [pure.css](https://purecss.io/)
 - 반응형 웹 어플리케이션입니다.
 
 ## Features
